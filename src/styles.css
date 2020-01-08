@@ -1,0 +1,161 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  margin: 0;
+}
+
+.viewport {
+  position: relative;
+  background-color: transparent;
+  transform-style: preserve-3d;
+  height: 100vh;
+  width: calc(100% - 20px);
+  perspective-origin: center center;
+  perspective: 1000px;
+  margin: 0 10px;
+}
+
+.pages {
+  background-color: transparent;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform-origin: 0 0;
+  transform: rotateX(0deg) rotateY(0deg) translate3d(-50%, -50%, 1000px);
+  transform-style: preserve-3d;
+  width: 500px;
+}
+
+.page {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform-origin: 0 0;
+  transform-style: preserve-3d;
+  width: 500px;
+  height: 500px;
+  padding: 20px;
+}
+
+.page--home {
+  background-color: #ccc;
+  transform: rotateX(0deg) rotateY(0deg) translate3d(-50%, -50%, 250px);
+}
+
+.page--about {
+  background-color: #623;
+  transform: rotateX(0deg) rotateY(90deg) translate3d(-50%, -50%, 250px);
+}
+
+.page--links {
+  background-color: #326;
+  transform: rotateX(0deg) rotateY(-90deg) translate3d(-50%, -50%, 250px);
+}
+
+.page h1 {
+  margin: 0;
+  width: 425px;
+  transform: translate3d(20px, 0, 100px);
+}
+
+.page--home h1 {
+  color: #623;
+}
+
+.page--about h1 {
+  color: #ccc;
+}
+
+.page--links h1 {
+  color: #ccc;
+}
+
+.page p {
+  width: 370px;
+  transform: translate3d(45px, 0, 150px);
+  margin: 10px 0;
+}
+
+.page--home p {
+  color: #333;
+}
+
+.page--about p {
+  color: rgb(36, 0, 8);
+}
+
+.page--links p {
+  text-align: right;
+  color: #659;
+}
+
+.page ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+}
+
+.page--links ul {
+  width: 370px;
+  transform: translate3d(45px, 0, 100px);
+}
+
+.page--links li {
+  display: block;
+  text-align: right;
+}
+
+.page--links a {
+  text-align: right;
+  display: block;
+  text-decoration: none;
+  color: #ccc;
+  margin: 0 0 10px;
+  padding: 5px 10px;
+  background-color: #fff0;
+  transition: background-color 300ms ease-in;
+  border-radius: 3px;
+}
+
+.page--links a:hover {
+  color: #ddd;
+  background-color: #fff3;
+}
+
+.arrows {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.arrow {
+  display: inline-block;
+  border-right: 10px solid #000;
+  border-bottom: 10px solid #000;
+  width: 33px;
+  height: 33px;
+  cursor: pointer;
+}
+
+.arrow:last-of-type {
+  margin: 0;
+}
+
+.arrow-left {
+  transform: rotate(135deg);
+}
+
+.arrow-right {
+  transform: rotate(-45deg);
+}
+
+.page--home .arrows {
+  transform: translate3d(-50px, -100px, 100px);
+}
+
+.page--home .arrow {
+  border-color: #623;
+}
